@@ -1,6 +1,7 @@
 CC = gcc
 CXX = g++
-CFLAGS = -O2 -std=c++17
+CFLAGS = -O2 -std=c11
+CXXFLAGS = -O2 -std=c++17
 
 SRCS = makemogg_lib.cpp aes.c VorbisEncrypter.cpp OggMap.cpp oggvorbis.cpp CCallbacks.cpp
 LIBNAME = makemogg
