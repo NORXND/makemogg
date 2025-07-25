@@ -4,9 +4,11 @@
 #include <variant>
 #include <vector>
 
+
 #ifndef _OV_FILE_H_
 #include "XiphTypes.h"
 #endif
+#include <cstdint>
 
 struct OggMap {
   // Create an OggMap from an ogg vorbis file.
