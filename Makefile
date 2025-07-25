@@ -33,10 +33,10 @@ SHARED_OBJS := $(SHARED_OBJS:.c=.so.o)
 all: $(SHARED_LIB)
 
 $(SHARED_LIB): $(SHARED_OBJS)
-	$(CXX) $(CFLAGS) $(SHARED_FLAGS) -o $(SHARED_LIB) $(SHARED_OBJS)
+	$(CXX) $(CXXFLAGS) $(SHARED_FLAGS) -o $(SHARED_LIB) $(SHARED_OBJS)
 
 %.so.o: %.cpp
-	$(CXX) $(CFLAGS) $(PICFLAG) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(PICFLAG) -c $< -o $@
 
 %.so.o: %.c
 	$(CC) $(CFLAGS) $(PICFLAG) -c $< -o $@
