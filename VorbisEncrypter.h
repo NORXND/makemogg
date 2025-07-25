@@ -20,7 +20,7 @@ public:
 	// Read encrypted Mogg data. Returns number of elements read.
 	size_t ReadRaw(void* buf, size_t elementSize, size_t elements);
 private:
-	void VorbisEncrypter::GenerateIv(uint8_t* header_ptr);
+	void GenerateIv(uint8_t* header_ptr);
 
 
 	void FixCounter(size_t decryptedPos);
