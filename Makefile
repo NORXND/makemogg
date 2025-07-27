@@ -8,7 +8,7 @@ LIBNAME = makemogg
 
 ifeq ($(OS),Windows_NT)
     SHARED_LIB = $(LIBNAME).dll
-    SHARED_FLAGS = -shared -static-libgcc -static-libstdc++ -static
+    SHARED_FLAGS = -shared -static-libgcc -static-libstdc++
     PICFLAG =
     RM = del /Q
     CFLAGS += -DMAKEMOGG_EXPORTS
