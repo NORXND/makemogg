@@ -31,11 +31,13 @@ jobs:
               run: |
                   make
 
-            - name: Find libwinpthread-1.dll (Windows)
+            - name: Find and copy libwinpthread-1.dll (Windows)
               if: runner.os == 'Windows'
+              shell: pwsh
               run: |
-                  where libwinpthread-1.dll || dir /s /b libwinpthread-1.dll > found.txt || echo not found
-                  for /f %%i in ('dir /s /b libwinpthread-1.dll') do copy \"%%i\" .
+                  $dll = Get-ChildItem -Path 'C:\' -Filter 'libwinpthread-1.dll' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+                  if ($dll) { Copy-Item $dll.FullName . }
+                  else { Write-Host 'libwinpthread-1.dll not found' }
 
             - name: Upload makemogg library and libwinpthread-1.dll
               uses: actions/upload-artifact@v4
